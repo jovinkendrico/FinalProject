@@ -29,18 +29,6 @@ public class App {
                 bersihkanLayar();
             }
         }
-        // ide fitur kasir 
-        // Keuntungan / kerugian perbulan 
-        // beli total harga 4 dapat poin trus poinnya dpt ditukarin jadi diskon?
-        // minimal pembelian 50rb baru ditanya "ada member" (?)
-        // belanja min 300k dpt 3000 poin 
-        // 1 poin = diskon 1 rp
-        //tambah member di class customer
-        // sign in pake username employee   sign out
-
-        // jovin = supplier
-        // Vanesia = member gold, silver, brown
-        // 
     }
     public static void runApp(Scanner scanner, Employee employee, ArrayList<Employee> dataEmployee, ArrayList<Item> dataItem, ArrayList<Customer> dataCustomer, ArrayList<Category> dataCategory, ArrayList<Invoice> dataInvoice, ArrayList<Sale> dataSale){
         if(employee.getIsAdmin()){
