@@ -1,23 +1,27 @@
 package entity;
 
-public class Employee{
-    private int employeeId;
-    private String employeeName;
-    private String userName;
-    private String password;
-    private String phone;
-    private String email;
-    private String type;
+import java.util.ArrayList;
 
-    public Employee(int employeeId, String employeeName, String userName, String password, String phone, String email, String type) {
-        this.employeeId = employeeId;
+public abstract class Employee{
+    private static int increment = 0;
+    public int employeeId;
+    public String employeeName;
+    public String userName;
+    public String password;
+    public boolean isAdmin;
+
+    public Employee( String employeeName, String userName, String password, boolean isAdmin) {
+        this.employeeId = ++increment;
         this.employeeName = employeeName;
         this.userName = userName;
         this.password = password;
-        this.phone = phone;
-        this.email = email;
-        this.type = type;
+        this.isAdmin = isAdmin;
     }
+    
+    abstract void showCustomerData(ArrayList<Customer> dataCustomer);
+    abstract void showInvoiceData(ArrayList<Invoice> dataInvoice);
+    abstract void showItemData(ArrayList<Item> dataItem);
+    abstract void showItemCategory(ArrayList<Category> dataCategory);
 
     public int getEmployeeId() {
         return this.employeeId;
@@ -51,28 +55,16 @@ public class Employee{
         this.password = password;
     }
 
-    public String getPhone() {
-        return this.phone;
+    public boolean isIsAdmin() {
+        return this.isAdmin;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public boolean getIsAdmin() {
+        return this.isAdmin;
     }
 
-    public String getEmail() {
-        return this.email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getType() {
-        return this.type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
+    public void setIsAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
     }
 
 }

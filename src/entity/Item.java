@@ -8,6 +8,7 @@ public class Item {
     private Category category;
 
 
+
     public Item(String itemId, String itemName, int price, int amount, Category category) {
         this.itemId = itemId;
         this.itemName = itemName;
@@ -15,6 +16,7 @@ public class Item {
         this.amount = amount;
         this.category = category;
     }
+
 
 
     public String getItemId() {

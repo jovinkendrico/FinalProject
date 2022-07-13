@@ -1,18 +1,19 @@
 package entity;
 
 public class Sale {
+    private static int increment;
     private int saleId;
     private Invoice invoice;
     private Item item;
-    private double quantity;
+    private int quantity;
     private int total;
 
-    public Sale(int saleId, Invoice invoice, Item item, double quantity, int total) {
-        this.saleId = saleId;
+    public Sale(Invoice invoice, Item item, int quantity) {
+        this.saleId = ++increment;
         this.invoice = invoice;
         this.item = item;
         this.quantity = quantity;
-        this.total = total;
+        this.total = item.getPrice() * quantity;
     }
 
     public int getSaleId() {
@@ -43,7 +44,7 @@ public class Sale {
         return this.quantity;
     }
 
-    public void setQuantity(double quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 

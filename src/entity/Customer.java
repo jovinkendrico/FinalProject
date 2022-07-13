@@ -1,17 +1,25 @@
 package entity;
 
 public class Customer{
-    private String customerId;
+    private static int increment = 0;
+    private int customerId;
     private String customerName;
     private String phone;
     private String email;
 
 
-    public String getCustomerId() {
+    public Customer(String customerName, String phone, String email) {
+        this.customerId = ++increment;
+        this.customerName = customerName;
+        this.phone = phone;
+        this.email = email;
+    }
+
+    public int getCustomerId() {
         return this.customerId;
     }
 
-    public void setCustomerId(String customerId) {
+    public void setCustomerId(int customerId) {
         this.customerId = customerId;
     }
 

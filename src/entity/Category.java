@@ -1,12 +1,16 @@
 package entity;
 
 public class Category {
+    private static int increment = 0;
     private int categoryId;
     private String jenisKategori;
 
 
-    public Category(int categoryId, String jenisKategori) {
-        this.categoryId = categoryId;
+    public Category() {
+    }
+
+    public Category(String jenisKategori) {
+        this.categoryId = ++increment;
         this.jenisKategori = jenisKategori;
     }
 

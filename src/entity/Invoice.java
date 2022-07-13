@@ -3,31 +3,43 @@ package entity;
 import java.time.LocalDate;
 
 public class Invoice {
-    private String invoiceId;
+    private static int increment;
+    private int invoiceId;
     private Employee employee;
     private Customer customer;
     private LocalDate localDate;
-    private double totalPrice;
-    private double tax;
-    private double discount;
-    private double totalPay;
-    private double paid;
-    private double returned;
+    private double totalPrice = 0;
+    private double tax = 0.11 * totalPrice;
+    private double discount = 0;
+    private double totalPay = totalPrice + tax - discount;
+    private double paid = 0;
+    private double returned = paid - totalPay;
 
-    public Invoice(String invoiceId, Employee employee, Customer customer, int year, int month, int dayOfMonth, double totalPrice, double tax, double discount, double totalPay, double paid, double returned) {
-        this.invoiceId = invoiceId;
+    public Invoice() {
+    }
+
+    public Invoice(Employee employee, Customer customer, int year, int month, int dayOfMonth, double totalPrice, double tax, double discount, double totalPay, double paid, double returned) {
+        this.invoiceId = ++increment;
         this.employee = employee;
         this.customer = customer;
+        this.localDate = LocalDate.of(year, month, dayOfMonth);
         this.totalPrice = totalPrice;
         this.tax = tax;
-        this.localDate = LocalDate.of(year, month, dayOfMonth);
         this.discount = discount;
         this.totalPay = totalPay;
         this.paid = paid;
         this.returned = returned;
     }
 
-    public String getInvoiceId() {
+    public Invoice(Employee employee, Customer customer, LocalDate localDate) {
+        this.invoiceId = ++increment;
+        this.employee = employee;
+        this.customer = customer;
+        this.localDate = localDate;
+
+    }
+
+    public int getInvoiceId() {
         return this.invoiceId;
     }
 
@@ -40,7 +52,7 @@ public class Invoice {
     }
     
 
-    public void setInvoiceId(String invoiceId) {
+    public void setInvoiceId(int invoiceId) {
         this.invoiceId = invoiceId;
     }
 
@@ -66,6 +78,10 @@ public class Invoice {
 
     public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
+    }
+    
+    public void tambahTotalPrice(double totalPrice){
+        this.totalPrice += totalPrice;
     }
 
     public double getTax() {
