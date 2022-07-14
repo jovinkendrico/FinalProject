@@ -186,11 +186,11 @@ public class App {
 
     public static ArrayList<Item> initItem(ArrayList<Category> dataCategory) {
         ArrayList<Item> dataItem = new ArrayList<Item>();
-        dataItem.add(new Item("OBAT001", "Mylanta Cair", 14000, 50, dataCategory.get(0)));
-        dataItem.add(new Item("SNK001", "Chitato", 3000, 105, dataCategory.get(1)));
-        dataItem.add(new Item("MIN001", "Pocari", 5000, 200, dataCategory.get(2)));
-        dataItem.add(new Item("PRT001", "Sapu", 40000, 30, dataCategory.get(3)));
-        dataItem.add(new Item("MIN001", "Teh Pucuk Harum", 3500, 300, dataCategory.get(4)));
+        dataItem.add(new Item("OBAT001", "Mylanta Cair", 14000, 50, dataCategory.get(2)));
+        dataItem.add(new Item("SNK001", "Chitato", 3000, 105, dataCategory.get(3)));
+        dataItem.add(new Item("MIN001", "Pocari", 5000, 200, dataCategory.get(0)));
+        dataItem.add(new Item("PRT001", "Sapu", 40000, 30, dataCategory.get(4)));
+        dataItem.add(new Item("MIN001", "Teh Pucuk Harum", 3500, 300, dataCategory.get(0)));
         return dataItem;
     }
 
