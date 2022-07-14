@@ -116,14 +116,16 @@ public class EmployeeCashier extends Employee {
         for (Sale sale : dataSale) {
             if(sale.getInvoice().getInvoiceId() == invoice.getInvoiceId()) System.out.format("%8s %30s %10s %10s %10s \n", sale.getItem().getItemId(), sale.getItem().getItemName(), sale.getQuantity(), sale.getItem().getPrice(), sale.getTotal());
         }
+        System.out.println("=============================================================================");
+
         System.out.println("Total Harga = " + invoice.getTotalPrice());
         System.out.println("Tax         = " + invoice.getTax());
         System.out.println("Diskon      = " + invoice.getDiscount());
         System.out.println("Total Bayar = " + invoice.getTotalPay());
         System.out.println("Bayar       = " + invoice.getPaid());
         System.out.println("Kembalian   = " + invoice.getReturned());
+        System.out.println("=============================================================================");
 
-        System.out.println("===============================");
     }
     private void tambahDataCustomer(Scanner scanner, ArrayList<Customer> dataCustomer, String phone){
         String namaCustomer;

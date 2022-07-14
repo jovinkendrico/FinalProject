@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public abstract class Employee{
     private static int increment = 0;
-    public int employeeId;
-    public String employeeName;
-    public String userName;
-    public String password;
-    public boolean isAdmin;
+    private int employeeId;
+    private String employeeName;
+    private String userName;
+    private String password;
+    private boolean isAdmin;
 
     public Employee( String employeeName, String userName, String password, boolean isAdmin) {
         this.employeeId = ++increment;
